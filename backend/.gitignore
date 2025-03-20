@@ -1,0 +1,45 @@
+# Python-related ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment (venv)
+venv/
+env/
+*.venv
+
+# IDE & Editor Files
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.idea/
+
+# Django-related files
+db.sqlite3
+*.log
+*.pot
+*.pyc
+local_settings.py
+media/
+staticfiles/
+static/
+
+# Secrets & Environment Variables
+.env
+*.json
+config.json
+
+# Migrations
+**/migrations/*
+
+# Node.js files
+node_modules/
+npm-debug.log
+yarn-error.log
