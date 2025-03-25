@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework', # Django REST framework
     'corsheaders', # Django CORS headers
 
+    'api', # Main app
     'users', # User authentication
     'topics', # Topics
     'resources', # Shared learning resources
@@ -131,7 +132,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173" # Frontend URL
+]
 CORS_ALLOW_HEADERS = list(default_headers)
 
 AUTH_USER_MODEL = 'users.CustomUser' # Custom user model
