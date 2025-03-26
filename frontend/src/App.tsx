@@ -7,14 +7,14 @@ import "./index.css"; // Ensure tailwind is applied
 
 function App() {
   return (
-    <Router>
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Signup" element={<Signup />} />
       </Routes>
-    </Router>
+    </div>
   );
 };
 
