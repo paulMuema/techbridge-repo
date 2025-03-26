@@ -1,20 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
-import "./index.css"; // Ensure tailwind is applied
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/Signup" element={<Signup />} />
-      </Routes>
-    </div>
+    <Router>
+      <div className="flex min-h-screen flex-col bg-gray-100">
+        {/* Navbar displayed on all pages */}
+        <Navbar />
+
+        {/* Page Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
