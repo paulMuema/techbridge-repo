@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework', # Django REST framework
+    'rest_framework.authtoken', # Token authentication
+    'djoser', # User authentication
     'corsheaders', # Django CORS headers
 
     'api', # Main app
@@ -135,6 +137,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173" # Frontend URL
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_HEADERS = list(default_headers)
 
 AUTH_USER_MODEL = 'users.CustomUser' # Custom user model
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "id",
+    "LOGIN_FIELD": "email",
+    "user_create":"users.serializers.CustomUserSerializer",
+    "current_user":"users.serializers.CustomUserSerializer",
+}

@@ -1,7 +1,7 @@
-from rest_framework import serializers
-from .models import User  # Import your model
+from djoser.serializers import UserCreateSerializer
+from users.models import CustomUser
 
-class UserSerializer(serializers.ModelSerializer):
+class CustomUserSerializer(UserCreateSerializer):
     class Meta:
-        model = User  # Define the model to serialize
-        fields = ['id', 'username', 'email', 'date_joined']  # Specify fields to include in the serialized output
+        model = CustomUser
+        fields = ("id", "email", "name", "password")

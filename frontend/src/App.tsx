@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
+import Resources from "./pages/resources";
+import CourseDetails from "./pages/ResourceDetails";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/:id" element={<CourseDetails />} />
       </Routes>
     </div>
   );

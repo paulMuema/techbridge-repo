@@ -1,6 +1,8 @@
-from django.urls import path
-from .views import UserListCreateView
+# django_project/urls.py
+from django.contrib import admin
+from django.urls import path, include  # new
 
 urlpatterns = [
-    path('users/', UserListCreateView.as_view(), name='user-list'),
+    path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),  # new
 ]
