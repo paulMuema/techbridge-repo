@@ -2,10 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
+import UserDashboard from "./pages/UserDashboard";
 import Navbar from "./components/Navbar";
 import Resources from "./pages/resources";
-import CourseDetails from "./pages/ResourceDetails";
+import ResourceDetails from "./pages/ResourceDetails";
 
 const App = () => {
   return (
@@ -18,9 +18,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/user/:id" element={<UserDashboard />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/resources/:id" element={<CourseDetails />} />
+        <Route path="/resources/:id" element={<ResourceDetails />} />
       </Routes>
     </div>
   );
